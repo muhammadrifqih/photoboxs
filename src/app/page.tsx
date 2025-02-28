@@ -92,7 +92,7 @@ export default function PhotoBooth() {
         ctx.font = "24px Arial";
         ctx.textAlign = "center";
         ctx.textBaseline = "middle";
-        ctx.fillText("PhotoBooth Memories", canvasRef.current.width / 2, 60);
+        // ctx.fillText("PhotoBooth Memories", canvasRef.current.width / 2, canvasRef.current.height - 80);
         ctx.font = "18px Arial";
         ctx.fillText("Thank you for using PhotoBooth!", canvasRef.current.width / 2, canvasRef.current.height - 60);
         ctxRef.current = ctx;
@@ -122,7 +122,7 @@ export default function PhotoBooth() {
     img.onload = () => {
       const previewWidth = 300;
       const previewHeight = (img.height / img.width) * previewWidth;
-      const yPos = 120 + index * (previewHeight + 20);
+      const yPos = 40 + index * (previewHeight + 20);
       ctx.drawImage(img, 50, yPos, previewWidth, previewHeight);
     };
   };
@@ -143,7 +143,7 @@ export default function PhotoBooth() {
         {/* KAMERA + KONTROL */}
         <div className="flex flex-col items-center space-y-4">
           <div className="relative">
-            <video ref={videoRef} autoPlay className="w-[800px] h-[450px] rounded-lg shadow-lg" />
+            <video ref={videoRef} autoPlay className=" rounded-lg shadow-lg" />
             {countdown !== null && (
               <div className="absolute inset-0 flex items-center justify-center text-white text-5xl font-bold rounded-lg">
                 {countdown}
