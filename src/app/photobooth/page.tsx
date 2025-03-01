@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 export default function PhotoBooth() {
     const videoRef = useRef<HTMLVideoElement | null>(null);
     const streamRef = useRef<MediaStream | null>(null);
-    const canvasRef = useRef<HTMLCanvasElement | null>(null);
+
     const [countdown, setCountdown] = useState<number | null>(null);
     const [photos, setPhotos] = useState<string[]>([]);
     const [allPhotosTaken, setAllPhotosTaken] = useState(false);
